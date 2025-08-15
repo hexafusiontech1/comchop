@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu |</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="./css/menu.css">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+    <div class="container">
+      <!-- Logo / Menu Title -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="fw-bold fs-2 text-warning">ComChop.Ng</span>
+        <!-- <span class="fw-bold fs-5 text-white">MENU</span> -->
+      </a>
+
+      <!-- Toggle for Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links + Vendor Button -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="shawama.html">Shawarma</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="snacks.html">Snacks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pastries.html">Pastries</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="cake.html">Cakes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="wine.html">Wines</a>
+          </li>
+        </ul>
+
+        <!-- Become a Vendor Button -->
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <a href="vendor.html" class="btn btn-warning fw-bold px-3">
+            Become a Vendor
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Explore Our Delicious Menu</h1>
+      <p>Choose from our full menu of Shawarma, Snacks, Pastries, Cakes, and Wines.</p>
+    </div>
+  </section>
+
+  <!-- Menu Grid Section -->
+  <section class="menu-grid py-5">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+        <!-- Shawarma -->
+        <div class="col">
+          <a href="shawarma.html" class="text-decoration-none">
+            <div class="card h-100 text-center">
+              <img src="./images/🥙 Mouthwatering Shawarma_ A Perfect Blend of Meat and Veggies 🌯.jpeg" class="card-img-top" alt="Shawarma">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Shawarma</h5>
+                <p class="card-text text-muted">Savory wraps with meat, veggies & sauces.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Snacks -->
+        <!-- <div class="col">
+          <a href="snacks.html" class="text-decoration-none">
+            <div class="card h-100 text-center">
+              <img src="./images/snacks/Sausageroll.jpg" class="card-img-top" alt="Snacks">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Snacks</h5>
+                <p class="card-text text-muted">Quick bites, rolls, and tasty nibbles.</p>
+              </div>
+            </div>
+          </a>
+        </div> -->
+
+        <!-- Pastries -->
+        <!-- <div class="col">
+          <a href="pastries.html" class="text-decoration-none">
+            <div class="card h-100 text-center">
+              <img src="./images/pastries/apple-pie.jpg" class="card-img-top" alt="Pastries">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Pastries</h5>
+                <p class="card-text text-muted">Cookies, cupcakes, donuts, and more.</p>
+              </div>
+            </div>
+          </a>
+        </div> -->
+
+        <!-- Cakes -->
+        <div class="col">
+          <a href="cake.html" class="text-decoration-none">
+            <div class="card h-100 text-center">
+              <img src="./images/cake/cake6.jpeg" class="card-img-top" alt="Cakes">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Cakes</h5>
+                <p class="card-text text-muted">Celebrate with fresh, tasty cakes.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Wines -->
+        <div class="col">
+          <a href="wine.html" class="text-decoration-none">
+            <div class="card h-100 text-center">
+              <img src="./images/wines/wine1.jpeg" class="card-img-top" alt="Wines">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Wines</h5>
+                <p class="card-text text-muted">Premium selection of red and white wines.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-section text-white pt-5">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <!-- Logo and Contact -->
+        <div class="col-md-4 mb-4">
+          <h2 class="fw-bold">ComChop.ng</h2>
+          <h5 class="fw-bold mt-4">Get in Touch</h5>
+          <p class="mb-1">Call or WhatsApp</p>
+          <p class="fw-bold fs-5">+234 9065 136 669</p>
+          <div class="social-icons d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook text-white fs-5"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram text-white fs-5"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter text-white fs-5"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube text-white fs-5"></i></a>
+          </div>
+        </div>
+  
+        <!-- Menu Links -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Our Menu</h5>
+          <ul class="list-unstyled mt-3">
+            <li><a href="shawama.html" class="text-white text-decoration-none">Shawarma</a></li>
+            <!-- <li><a href="snacks.html" class="text-white text-decoration-none">Snacks</a></li>
+            <li><a href="pastries.html" class="text-white text-decoration-none">Pastries</a></li> -->
+            <li><a href="cake.html" class="text-white text-decoration-none">Cakes</a></li>
+            <li><a href="wine.html" class="text-white text-decoration-none">Wines</a></li>
+          </ul>
+        </div>
+  
+        <!-- Info Links -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Quick Info</h5>
+          <ul class="list-unstyled mt-3">
+            <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Divider -->
+      <hr class="line bg-white opacity-100 my-4" />
+  
+      <!-- Copyright -->
+      <div class="text-center">
+        <p class="mb-0 pb-3">© 2025 ComChop.ng . Powered and secured by 
+          <a href="https://hexafusiontech.pages.dev" target="_blank" class="text-white text-decoration-underline">Hexafusion</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

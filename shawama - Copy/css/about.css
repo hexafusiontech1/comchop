@@ -1,0 +1,237 @@
+:root {
+    --heading-font: 'Open Sans', sans-serif;
+    --body-font: 'Roboto', Arial, sans-serif;
+    --accent-font: 'Amatic SC', cursive;
+    --primary-background: #FFFFFF; /* White for main content background */
+    --primary-text: #000000; /* Black for body text and headings */
+    --accent-red: #ff0000; /* Red for buttons and call-to-action elements */
+    --accent-orange: #F4A261; /* Orange for food imagery or highlights */
+    --secondary-text: #333333; /* Dark gray for secondary text or footer */
+    --section-divider: #D3D3D3; /* Light gray for backgrounds or borders */
+    --highlight-yellow: #FFD60A; /* Yellow for promotional accents */
+    --fresh-green: #2A9D8F; /* Green for food imagery or freshness accents */
+    --food-brown: #8B4513; /* Brown for grilled food imagery */
+  }
+  
+  
+  * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+          
+          body {
+              font-family: var(--body-font);
+              background-color: var(--primary-background);
+              color: var(--primary-text);
+              line-height: 1.6;
+          }
+
+          .about-section h1 {
+            font-size: 4rem; /* Larger About Us heading */
+          }
+          
+          .single-border-wrapper {
+            border: 1px solid #000; /* Single border around image and text */
+          
+           
+          }
+          
+          .about-image {
+            max-height: 500px; /* Controlled image height */
+            width: auto; /* Maintain aspect ratio */
+         
+          }
+          
+          .line-break {
+            display: block; /* Enforce line breaks for span elements */
+          }
+          
+          @media (max-width: 768px) {
+            .about-section h1 {
+              font-size: 3rem; /* Slightly smaller on mobile */
+            }
+          
+            .about-image {
+              max-height: 200px; /* Smaller height on mobile */
+              width: 100%; /* Full width on mobile */
+            }
+          }
+          
+          
+
+          .outer-box {
+            border: 1px solid #ddd;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            max-width: 1200px;
+          }
+      
+          .info-card {
+            flex: 1;
+            padding: 30px 20px;
+            min-width: 300px;
+          }
+      
+          .info-card:not(:last-child) {
+            border-right: 1px solid #ddd;
+          }
+      
+          .info-icon {
+            font-size: 2rem;
+            color: #f44336;
+            margin-bottom: 15px;
+          }
+      
+          .info-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+          }
+      
+          .info-text {
+            font-size: 0.95rem;
+            color: #333;
+          }
+      
+          @media (max-width: 768px) {
+            .outer-box {
+              flex-direction: column;
+            }
+      
+            .info-card {
+              border-right: none !important;
+              border-bottom: 1px solid #ddd;
+            }
+      
+            .info-card:last-child {
+              border-bottom: none;
+            }
+          }
+          .banner-wrapper {
+            max-width: 1000px;
+            margin-left: 140px;  /* Desktop: shift right */
+            margin-right: auto;
+            margin-top: 80px;
+            margin-bottom: 80px;
+          }
+          
+          .banner {
+            background-image: url('../images/about-save.avif');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            border-radius: 10px;
+          }
+          
+          .banner h1 {
+            font-size: 3.9rem;
+            font-weight: 800;
+          }
+          
+          .banner p {
+            font-size: 1.65rem;
+            margin-bottom: 20px;
+          }
+          
+          .btn-shop {
+            background-color: var(--accent-red);
+            color: var(--primary-background);
+            padding: 12px 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 30px;
+            transition: 0.3s;
+            text-decoration: none;
+          }
+          
+          .btn-shop:hover {
+            background-color: var(--primary-background);
+            color: var(--accent-red);
+          }
+          
+          /* ✅ Responsive Fixes */
+          @media (max-width: 992px) {
+            .banner-wrapper {
+              margin: 40px 30px; /* reduce left/right margin */
+            }
+          
+            .banner {
+              padding: 60px 30px;
+            }
+          
+            .banner h1 {
+              font-size: 2.5rem;
+            }
+          
+            .banner p {
+              font-size: 1.2rem;
+            }
+          }
+          
+          @media (max-width: 576px) {
+            .banner-wrapper {
+              margin: 30px 15px; /* tighter margin for small screens */
+            }
+          
+            .banner {
+              padding: 40px 20px;
+            }
+          
+            .banner h1 {
+              font-size: 2rem;
+            }
+          
+            .banner p {
+              font-size: 1rem;
+            }
+          }
+          
+
+
+.outer-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
+  padding: 0 1rem;
+}
+
+.info-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1.5rem;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+.info-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.info-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}

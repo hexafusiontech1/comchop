@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Fiesta - Easy, Fresh & Convenient</title>
+<!-- Bootstrap 5 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font-awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<!-- custom css -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+
+<body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="container">
+          <div class="top-links">
+            <a href="#about">About Us</a>
+            <a href="#support">Customer Support</a>
+          </div>
+          <button class="login-btn" onclick="handleLogin()">
+            <i class="fas fa-lock"></i> Log In
+          </button>
+        </div>
+      </div>
+      <!-- end -->
+    
+      <!-- Logo and Search Row -->
+      <div class="logo-search-row">
+        <div class="container">
+          <div class="logo-search-container">
+            <div class="logo">shawamacom.ng</div>
+    
+            <div class="search-container">
+              <input type="text" class="search-bar" placeholder="Search here..." id="searchInput">
+              <button class="search-btn" onclick="handleSearch()">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+    
+            <div class="icons">
+              <button class="icon-btn" onclick="showLocation()">
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+              <button class="icon-btn" onclick="showFavorites()">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end -->
+    
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+          <span class="navbar-brand">RoVo Shawarma</span>
+    
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#all-shawarmas">All Shawarmas</a>
+              </li>
+    
+              <!-- Shawarma Dealers Dropdown -->
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                  Shawarma Dealers
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#genesis">Genesis</a></li>
+                  <li><a class="dropdown-item" href="#kilimanjaro">Kilimanjaro</a></li>
+                  <li><a class="dropdown-item" href="#de-promise">De Promise</a></li>
+                  <li><a class="dropdown-item" href="#others">Others</a></li>
+                </ul>
+              </li> -->
+    
+              <!-- Snacks & Small Chops Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                  Snacks
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#chicken-pie">Chicken Pie</a></li>
+                  <li><a class="dropdown-item" href="#meatpie">Meatpie</a></li>
+                  <li><a class="dropdown-item" href="#chinchin">Chinchin</a></li>
+                  <li><a class="dropdown-item" href="#buns">Buns</a></li>
+                  <li><a class="dropdown-item" href="#buns">Small Chops</a></li>
+                </ul>
+              </li>
+    
+              <li class="nav-item">
+                <a class="nav-link" href="#orders">My Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#shop">Shop</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- end -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-container">
+            <div class="hero-content">
+                <!-- <p class="tagline">Easy, Fresh & Convenient</p> -->
+                <h1 class="hero-title">
+                  Easy<br>
+                  Fresh &<br>
+                  Convenient
+                </h1>
+                <div class="cta-buttons">
+                    <button class="btn-primary-custom" onclick="showLatestTastes()">SEE LATEST TASTES</button>
+                    <button class="btn-secondary-custom" onclick="shopNow()">Shop Now</button>
+                </div>
+            </div>
+            
+            <div class="booking-form">
+                <h3>Book Your Shawarma</h3>
+                <form id="bookingForm" onsubmit="handleBooking(event)">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" class="form-input" placeholder="Your Phone Number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select class="form-select" required>
+                            <option value="">CHOOSE LOCATION</option>
+                            <option value="agip">AGIP - ADA GEORGE</option>
+                            <option value="choba">CHOBA - RUMUOSI - ELAKAHIA</option>
+                            <option value="elelewon">ELELEWON</option>
+                            <option value="eleme">ELEME</option>
+                            <option value="gra">GRA</option>
+                            <option value="rumuokwuta">RUMUOKWUTA</option>
+                            <option value="rumuola">RUMUOLA</option>
+                            <option value="rumuigbo">RUMUIGBO - ELIMBU</option>
+                            <option value="trans-amadi">TRANS-AMADI</option>
+                            <option value="woji">WOJI</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label style="color: #4a4a4a; font-size: 14px; margin-bottom: 5px; display: block;">Any special need?</label>
+                        <textarea class="form-textarea" placeholder="Tell us about any special requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- end -->
+
+    <!-- Parallax Section -->
+    <section class="parallax-section"></section>
+    <!-- end -->
+
+
+<!-- delivery / best shops/deals / order -->
+<section class="features py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center g-4">
+      
+      <div class="col-auto">
+        <div class="card border-0 d-flex flex-row align-items-center p-3">
+          <img src="https://img.icons8.com/ios-filled/50/fa314a/delivery.png" alt="Delivery Icon" class="feature-icon me-3">
+          <div class="feature-text">
+            <h3 class="card-title mb-1">Fast Free Delivery</h3>
+            <p class="card-text">To Your Door</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto d-none d-md-block">
+        <div class="divider"></div>
+      </div>
+
+      <div class="col-auto">
+        <div class="card border-0 d-flex flex-row align-items-center p-3">
+          <img src="https://img.icons8.com/ios-filled/50/fa314a/shopping-basket-2.png" alt="Shop Icon" class="feature-icon me-3">
+          <div class="feature-text">
+            <h3 class="card-title mb-1">Best Shops/Best Deals</h3>
+            <p class="card-text">Check Out <a href="#" class="text-decoration-underline text-dark fw-medium">Locations</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto d-none d-md-block">
+        <div class="divider"></div>
+      </div>
+
+      <div class="col-auto">
+        <div class="card border-0 d-flex flex-row align-items-center p-3">
+          <img src="https://img.icons8.com/ios-filled/50/fa314a/smartphone-tablet.png" alt="Mobile Icon" class="feature-icon me-3">
+          <div class="feature-text">
+            <h3 class="card-title mb-1">Order on the Go</h3>
+            <p class="card-text"><a href="#" class="text-decoration-underline text-dark fw-medium">Download</a> Our App</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end -->
+
+
+<!-- choose shawarma -->
+<div class="container py-5">
+  <h1 class="text-center mb-4">
+    <i class="fas fa-utensils me-2 text-danger"></i>Choose Your Shawarma
+  </h1>
+
+  <div class="d-flex align-items-center justify-content-center gap-3">
+    <button class="btn btn-outline-secondary fs-4" id="prevBtn" onclick="moveSlide(-1)">❮</button>
+
+    <div class="flex-grow-1 overflow-hidden" style="max-width: calc(100% - 100px);">
+      <div class="d-flex transition" id="carouselTrack" style="transition: transform 0.5s ease-in-out;">
+        <!-- Sample Card - Repeat as needed -->
+        <div class="card mx-2 flex-shrink-0" style="width: 250px;">
+          <img src="../images/🥙 Mouthwatering Shawarma_ A Perfect Blend of Meat and Veggies 🌯.jpeg" class="card-img-top" alt="Shawarma">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-2">Shawarma with Cream</h5>
+            <p class="card-text">
+              <span class="text-decoration-line-through text-muted">₦1,700.00</span>
+              <span class="fw-bold text-danger">₦1,580.00</span>
+            </p>
+          </div>
+        </div>
+        <div class="card mx-2 flex-shrink-0" style="width: 250px;">
+          <img src="../images/home.jpeg" class="card-img-top" alt="Shawarma">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-2">Shawarma with Cream</h5>
+            <p class="card-text">
+              <span class="text-decoration-line-through text-muted">₦1,700.00</span>
+              <span class="fw-bold text-danger">₦1,580.00</span>
+            </p>
+          </div>
+        </div>
+        <div class="card mx-2 flex-shrink-0" style="width: 250px;">
+          <img src="../images/home.jpeg" class="card-img-top" alt="Shawarma">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-2">Shawarma with Cream</h5>
+            <p class="card-text">
+              <span class="text-decoration-line-through text-muted">₦1,700.00</span>
+              <span class="fw-bold text-danger">₦1,580.00</span>
+            </p>
+          </div>
+        </div>
+        <div class="card mx-2 flex-shrink-0" style="width: 250px;">
+          <img src="../images/home.jpeg" class="card-img-top" alt="Shawarma">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-2">Shawarma with Cream</h5>
+            <p class="card-text">
+              <span class="text-decoration-line-through text-muted">₦1,700.00</span>
+              <span class="fw-bold text-danger">₦1,580.00</span>
+            </p>
+          </div>
+        </div>
+        <div class="card mx-2 flex-shrink-0" style="width: 250px;">
+          <img src="../images/home.jpeg" class="card-img-top" alt="Shawarma">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-2">Shawarma with Cream</h5>
+            <p class="card-text">
+              <span class="text-decoration-line-through text-muted">₦1,700.00</span>
+              <span class="fw-bold text-danger">₦1,580.00</span>
+            </p>
+          </div>
+        </div>
+        <div class="card mx-2 flex-shrink-0" style="width: 250px;">
+          <img src="../images/home.jpeg" class="card-img-top" alt="Shawarma">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-2">Shawarma with Cream</h5>
+            <p class="card-text">
+              <span class="text-decoration-line-through text-muted">₦1,700.00</span>
+              <span class="fw-bold text-danger">₦1,580.00</span>
+            </p>
+          </div>
+        </div>
+        <div class="card mx-2 flex-shrink-0" style="width: 250px;">
+          <img src="../images/home.jpeg" class="card-img-top" alt="Shawarma">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-2">Shawarma with Cream</h5>
+            <p class="card-text">
+              <span class="text-decoration-line-through text-muted">₦1,700.00</span>
+              <span class="fw-bold text-danger">₦1,580.00</span>
+            </p>
+          </div>
+        </div>
+        <div class="card mx-2 flex-shrink-0" style="width: 250px;">
+          <img src="../images/home.jpeg" class="card-img-top" alt="Shawarma">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-2">Shawarma with Cream</h5>
+            <p class="card-text">
+              <span class="text-decoration-line-through text-muted">₦1,700.00</span>
+              <span class="fw-bold text-danger">₦1,580.00</span>
+            </p>
+          </div>
+        </div>
+        <!-- Repeat cards... -->
+      </div>
+    </div>
+
+    <button class="btn btn-outline-secondary fs-4" id="nextBtn" onclick="moveSlide(1)">❯</button>
+  </div>
+
+  <div class="text-center mt-4">
+    <button class="btn btn-danger px-4 py-2">
+      <i class="fas fa-store me-2"></i>Shop Now
+    </button>
+  </div>
+</div>
+<!-- end -->
+
+
+
+
+<!-- promo -->
+<div class="promo-container">
+  <!-- Left Wine Promo -->
+  <div class="promo-block" style="background-image: url('../images/shawarma-img.avif');">
+    <div class="promo-content">
+      <p class="top-text">It's Wine O'Clock!</p>
+      <h2>Great Deals on</h2>
+      <h1>Selected <span>Wines</span></h1>
+      <p class="small-text">get best drinks from FOJEH</p>
+      <div class="limited-supply">Limited<br>Supply</div>
+      <a href="#" class="shop-btn">Shop Now</a>
+    </div>
+  </div>
+
+  <!-- Right Cleaning Promo -->
+  <div class="promo-block" style="background-image: url('../images/shwarma-img6.avif');">
+    <div class="promo-content">
+      <p class="top-text">Deal of the Week</p>
+      <h1 class="discount">40% <span>off</span></h1>
+      <h2>Cleaning Supplies</h2>
+      <a href="#" class="shop-btn">Shop Now</a>
+    </div>
+  </div>
+</div>
+<!-- end -->
+
+<!-- subscribe -->
+<section class="subscribe-section">
+  <div class="overlay-content">
+    <p class="small-heading">Subscribe & Save</p>
+    <h1 class="big-discount">20% <span>off</span></h1>
+    <h2 class="sub-heading">Your Next Order</h2>
+
+    <!-- 👇 This line is what you want shown above the form -->
+    <p class="form-label">Enter your email here *</p>
+
+    <form class="subscribe-form" action="subscribe.php" method="POST">
+      <input type="email" name="email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+<!-- end -->
+
+
+
+
+<!-- shop-section -->
+<section class="shop-section">
+  <div class="background-layer">
+    <img src="../images/shawarma-img3.avif" alt="Background" class="background-img">
+    <div class="overlay"></div>
+  </div>
+
+  <div class="content-layer">
+    <!-- Phone image on left -->
+    <img src="../images/Artboard.avif " alt="Phone" class="phone-image">
+
+    <!-- Text and buttons -->
+    <div class="text-content">
+      <p class="small-text">Save Time, Money & Stress</p>
+      <h1>Shop With Us <br><span>on the Go</span></h1>
+      <p class="description">Your weekly shopping routine, at your<br> door in just a click</p>
+
+      <div class="store-buttons">
+        <a href="https://www.apple.com/app-store/" target="_blank">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+               alt="Download on the App Store">
+        </a>
+        <a href="https://play.google.com/store" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+               alt="Get it on Google Play">
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- end -->
+
+<!-- footer -->
+<footer class="footer-section  text-white pt-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <!-- Logo and Contact -->
+      <div class="col-md-4 mb-4">
+        <h2 class="fw-bold">Shawama.com.ng</h2>
+        <h5 class="fw-bold mt-4">Need Help?</h5>
+        <p class="mb-1">Visit our <a href="#" class="text-white text-decoration-underline">Customer Support</a></p>
+        <p>for assistance or call us at</p>
+        <p class="fw-bold fs-5">+234 9065 136 669</p>
+        <div class="social-icons d-flex gap-3 mt-3">
+          <a href="#"><i class="bi bi-facebook text-white fs-5"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-5"></i></a>
+          <a href="#"><i class="bi bi-twitter text-white fs-5"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-5"></i></a>
+        </div>
+      </div>
+
+    <!-- Menu -->
+<div class="col-md-4 mb-4">
+  <h5 class="fw-bold">Menu</h5>
+  <ul class="list-unstyled mt-3">
+    <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+    <li><a href="#" class="text-white text-decoration-none">All Shawamas</a></li>
+
+   
+
+    <li><a href="#" class="text-white text-decoration-none">My Orders</a></li>
+    <li><a href="#" class="text-white text-decoration-none">Shop</a></li>
+  </ul>
+</div>
+
+
+      <!-- Info -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold">Info</h5>
+        <ul class="list-unstyled mt-3">
+          <!-- <li><a href="#" class="text-white text-decoration-none">FAQ</a></li> -->
+          <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Customer Support</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Locations</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="bg-white opacity-50 my-4" />
+
+    <!-- Payment Methods and Links -->
+    <div class="text-center">
+      <div class="d-flex flex-wrap justify-content-center gap-4 mb-3">
+        <a href="#" class="text-white text-decoration-underline">Shipping & Returns</a>
+        <a href="#" class="text-white text-decoration-underline">Terms & Conditions</a>
+        <a href="#" class="text-white text-decoration-underline">Payment Methods</a>
+      </div>
+
+      <h5 class="fw-bold mb-4">We accept the following payment methods</h5>
+
+      <div class="payment-logos d-flex flex-wrap justify-content-center gap-3 mb-4">
+        <img src="../images/rovomonie.jpg" alt="MasterCard" height="35">
+        <img src="../images/opay.png" alt="American Express" height="35">
+        <img src="../images/moniepoint.jpeg" alt="UnionPay" height="35">
+      </div>
+      
+      
+
+      <p class="mb-0 pb-3">&copy; 2025 by RoVo shawarma Nigeria. Powered and secured by 
+        <a href="#" class="text-white text-decoration-underline">RoVo</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="../js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+//- first footer 
+<!-- footer -->
+<footer class="footer-section  text-white pt-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <!-- Logo and Contact -->
+      <div class="col-md-4 mb-4">
+        <h2 class="fw-bold">Shawama.com.ng</h2>
+        <h5 class="fw-bold mt-4">Need Help?</h5>
+        <p class="mb-1">Visit our <a href="#" class="text-white text-decoration-underline">Customer Support</a></p>
+        <p>for assistance or call us at</p>
+        <p class="fw-bold fs-5">+234 9065 136 669</p>
+        <div class="social-icons d-flex gap-3 mt-3">
+          <a href="#"><i class="bi bi-facebook text-white fs-5"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-5"></i></a>
+          <a href="#"><i class="bi bi-twitter text-white fs-5"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-5"></i></a>
+        </div>
+      </div>
+
+    <!-- Menu -->
+<div class="col-md-4 mb-4">
+  <h5 class="fw-bold">Menu</h5>
+  <ul class="list-unstyled mt-3">
+    <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+    <li><a href="#" class="text-white text-decoration-none">All Shawamas</a></li>
+
+    <!-- Hover Dropdown on "Shawama Dealers" -->
+    <!-- <li class="dropdown position-relative">
+      <a href="#" class="text-white text-decoration-none dropdown-toggle" id="dealerDropdown">Shawama Dealers</a>
+      <ul class="dropdown-menu shadow" aria-labelledby="dealerDropdown">
+        <li><a class="dropdown-item" href="#genesis">Genesis</a></li>
+        <li><a class="dropdown-item" href="#kilimanjaro">Kilimanjaro</a></li>
+        <li><a class="dropdown-item" href="#de-promise">De Promise</a></li>
+        <li><a class="dropdown-item" href="#others">Others</a></li>
+      </ul>
+    </li> -->
+
+    <li><a href="#" class="text-white text-decoration-none">My Orders</a></li>
+    <li><a href="#" class="text-white text-decoration-none">Shop</a></li>
+  </ul>
+</div>
+
+
+      <!-- Info -->
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold">Info</h5>
+        <ul class="list-unstyled mt-3">
+          <!-- <li><a href="#" class="text-white text-decoration-none">FAQ</a></li> -->
+          <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Customer Support</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Locations</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="bg-white opacity-50 my-4" />
+
+    <!-- Payment Methods and Links -->
+    <div class="text-center">
+      <div class="d-flex flex-wrap justify-content-center gap-4 mb-3">
+        <a href="#" class="text-white text-decoration-underline">Shipping & Returns</a>
+        <a href="#" class="text-white text-decoration-underline">Terms & Conditions</a>
+        <a href="#" class="text-white text-decoration-underline">Payment Methods</a>
+      </div>
+
+      <h5 class="fw-bold mb-4">We accept the following payment methods</h5>
+
+      <div class="payment-logos d-flex flex-wrap justify-content-center gap-3 mb-4">
+        <img src="../images/rovomonie.jpg" alt="MasterCard" height="35">
+        <img src="../images/opay.png" alt="American Express" height="35">
+        <img src="../images/moniepoint.jpeg" alt="UnionPay" height="35">
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/JCB_logo.svg" alt="JCB" height="35">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Discover_Card_logo.svg" alt="Discover" height="35">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" height="35">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" height="35">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Diners_Club_Logo3.svg" alt="Diners Club" height="35"> -->
+      </div>
+      
+      
+
+      <p class="mb-0 pb-3">&copy; 2025 by RoVo shawarma Nigeria. Powered and secured by 
+        <a href="#" class="text-white text-decoration-underline">RoVo</a>
+      </p>
+    </div>
+  </div>
+</footer>
